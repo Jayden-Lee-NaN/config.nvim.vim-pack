@@ -9,6 +9,8 @@ require('plugin/blink-cmp') -- 代码补全插件
 require('plugin/nvim-tree') -- 文件树插件
 require('plugin/catppuccin') -- 主题
 require('plugin/conform-nvim') -- formatter
+require('plugin/neogen') -- 注释生成
+require('plugin/nvim-treesitter') -- 代码解析
 
 ------------------------------lsp配置------------------------------
 require('lsp/ty') -- Python的lsp
