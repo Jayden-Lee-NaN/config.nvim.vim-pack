@@ -8,6 +8,7 @@ require('plugin/nvim-lspconfig') -- lsp配置插件
 require('plugin/blink-cmp') -- 代码补全插件
 require('plugin/nvim-tree') -- 文件树插件
 require('plugin/catppuccin') -- 主题
+require('plugin/conform-nvim') -- formatter
 
 ------------------------------lsp配置------------------------------
 require('lsp/ty') -- Python的lsp

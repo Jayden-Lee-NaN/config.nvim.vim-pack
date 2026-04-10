@@ -29,3 +29,7 @@ vim.api.nvim_set_keymap('', '<Down>', ':res -2<CR>', key_map_opt)
 -- 标签页切换
 vim.api.nvim_set_keymap('n', '<leader>[', '<C-o>', key_map_opt)
 vim.api.nvim_set_keymap('n', '<leader>]', '<C-i>', key_map_opt)
+
+-- 查看错误
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

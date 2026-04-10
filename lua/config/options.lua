@@ -24,3 +24,7 @@ vim.opt.fileencodings = "utf-8, gb2312, gbk, gb18030"           -- 支持编码�
 -- 开启内嵌显示
 vim.lsp.inlay_hint.enable(true)
 
+-- 设置折叠的方式
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 99
+
