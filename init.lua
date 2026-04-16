@@ -11,6 +11,7 @@ require('plugin/catppuccin') -- 主题
 require('plugin/conform-nvim') -- formatter
 require('plugin/neogen') -- 注释生成
 require('plugin/nvim-treesitter') -- 代码解析
+require('plugin/nvim-cursorline') -- cursorline
 
 ------------------------------lsp配置------------------------------
 require('lsp/ty') -- Python的lsp
