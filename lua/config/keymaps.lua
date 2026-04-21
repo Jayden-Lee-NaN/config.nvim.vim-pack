@@ -30,6 +30,31 @@ vim.api.nvim_set_keymap('', '<Down>', ':res -2<CR>', key_map_opt)
 vim.api.nvim_set_keymap('n', '<leader>[', '<C-o>', key_map_opt)
 vim.api.nvim_set_keymap('n', '<leader>]', '<C-i>', key_map_opt)
 
--- 查看错误
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- lsp相关
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    local opts = { buffer = event.buf, silent = true }
+    -- 跳转
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)         -- 跳到定义
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)        -- 跳到声明
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)         -- 查看引用
+    vim.keymap.set("n", "gri", vim.lsp.buf.implementation, opts)    -- 跳到实现
+    vim.keymap.set("n", "grt", vim.lsp.buf.type_definition, opts)   -- 跳到类型定义
+    -- 信息
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)               -- 悬停文档
+    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)  -- 签名帮助
+    -- 重构
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)     -- 重命名
+    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
+    -- 诊断
+    vim.keymap.set("n", "[d", function()
+        vim.diagnostic.jump({ count = -1, float = true})
+    end, opts)
+    vim.keymap.set("n", "]d", function()
+        vim.diagnostic.jump({ count = 1, float = true})
+    end, opts)
+    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
+  end,
+})
