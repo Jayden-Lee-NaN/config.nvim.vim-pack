@@ -14,5 +14,6 @@ require('plugin/nvim-treesitter') -- 代码解析
 require('plugin/nvim-cursorline') -- cursorline
 
 ------------------------------lsp配置------------------------------
-require('lsp/ty') -- Python的lsp
+require('lsp/ty') -- Python 的 lsp
+require('lsp/clangd') -- c/cpp/cuda 的lsp
 
