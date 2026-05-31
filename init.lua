@@ -16,5 +16,6 @@ require('plugin/render-markdown')
 
 ------------------------------lsp配置------------------------------
 require('lsp/ty') -- Python 的 lsp
-require('lsp/clangd') -- c/cpp/cuda 的lsp
+require('lsp/clangd') -- c/cpp/cuda 的 lsp
+require('lsp/marksman') -- markdown 的 lsp
 
