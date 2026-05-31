@@ -3,12 +3,20 @@ vim.pack.add({
 })
 
 require('nvim-treesitter').install({
-    "python"
+    "python",
+    "markdown",
+    "html",
+    "yaml",
+    "latex",
 })
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = {
         "python",
+        "markdown",
+        "html",
+        "yaml",
+        "latex",
     },
     callback = function(args)
         vim.treesitter.start(args.buf) -- 高亮
