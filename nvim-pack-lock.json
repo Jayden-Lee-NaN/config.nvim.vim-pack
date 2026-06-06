@@ -12,6 +12,14 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "live-server.nvim": {
+      "rev": "85915d0e7dd926a54b0082aaeafc10a82bfe8288",
+      "src": "https://github.com/selimacerbas/live-server.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "545cf3bc6c6425b33a9b25acef54f66e4035ca0f",
+      "src": "https://github.com/selimacerbas/markdown-preview.nvim"
+    },
     "mini.icons": {
       "rev": "520995f1d75da0e4cc901ee95080b1ff2bc46b94",
       "src": "https://github.com/nvim-mini/mini.icons"
