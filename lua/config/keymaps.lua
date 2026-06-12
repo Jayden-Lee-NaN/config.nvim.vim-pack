@@ -3,15 +3,16 @@
 local key_map_opt = { noremap = true, silent = true }
 vim.g.mapleader = " " 					-- 使用" "作为leader按键
 
-
 -- 插入模式键位映射
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', key_map_opt)
 
 -- 普通模式键位映射
 vim.api.nvim_set_keymap('n', 'W', ':w<CR>', key_map_opt)
 vim.api.nvim_set_keymap('n', 'Q', ':q<CR>', key_map_opt)
-vim.api.nvim_set_keymap('n', 'j', [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
-vim.api.nvim_set_keymap('n', 'k', [[v:count ? 'k' : 'gk']], { noremap = true, expr = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("v", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 ------------------------------功能映射------------------------------
 -- 分屏映射
