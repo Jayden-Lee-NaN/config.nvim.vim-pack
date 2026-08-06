@@ -28,3 +28,9 @@ vim.lsp.inlay_hint.enable(true)
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99
 
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = "»·",
+    trail = "□",
+    nbsp = "␣",
+}
